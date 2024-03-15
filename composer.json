@@ -1,0 +1,27 @@
+{
+    "name": "jturazzi/laravel-database-informix",
+    "description": "Informix Database driver for Laravel",
+    "type": "library",
+    "license": "MIT",
+    "minimum-stability": "stable",
+    "prefer-stable": true,
+    "autoload": {
+        "psr-4": {
+            "Jturazzi\\": "src/jturazzi"
+        }
+    },
+    "authors": [
+        {
+            "name": "Jérémy TURAZZI",
+            "email": "jeremy@trz.fr"
+        }
+    ],
+    "require": {
+        "guzzlehttp/guzzle": "*",
+        "illuminate/database": "*",
+        "illuminate/encryption": "*",
+        "illuminate/pagination": "*",
+        "illuminate/support": "*",
+        "php": "^8.2"
+    }
+}
