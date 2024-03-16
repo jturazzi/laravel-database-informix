@@ -11,10 +11,24 @@ To include Laravel-database-informix in your project, run the following command:
 composer require jturazzi/laravel-database-informix
 ```
 
-After Composer has finished installing the package, you'll need to register Informix DB. Go to config/app.php, find the providers array, and add:
+After Composer has finished installing the package, you'll need to register Informix DB. 
 
+### For Laravel 10 and earlier versions:
+Go to config/app.php, find the providers packages array, and add:
 ```php
-jturazzi\Database\Informix\InformixDBServiceProvider::class,
+/*
+* Package Service Providers...
+*/
+jturazzi\Informix\InformixDBServiceProvider::class,
+```
+
+### For Laravel 11 and newer versions:
+Go to bootstrap/providers.php and add:
+```php
+return [
+    App\Providers\AppServiceProvider::class,
+    jturazzi\Informix\InformixDBServiceProvider::class,
+];
 ```
 
 Finally, publish the configuration file with the following Artisan command:

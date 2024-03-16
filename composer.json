@@ -1,6 +1,6 @@
 {
     "name": "jturazzi/laravel-database-informix",
-    "description": "Informix Database driver for Laravel",
+    "description": "Informix Database driver for Laravel 10,11",
     "type": "library",
     "license": "MIT",
     "minimum-stability": "stable",
