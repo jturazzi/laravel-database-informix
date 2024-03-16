@@ -1,5 +1,11 @@
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
+<p align="center">
+<a href="https://packagist.org/packages/jturazzi/laravel-database-informix"><img src="https://img.shields.io/packagist/dt/jturazzi/laravel-database-informix" alt="Total Downloads"></a>
+<a href="https://packagist.org/packages/jturazzi/laravel-database-informix"><img src="https://img.shields.io/packagist/v/jturazzi/laravel-database-informix" alt="Latest Stable Version"></a>
+<a href="https://packagist.org/packages/jturazzi/laravel-database-informix"><img src="https://img.shields.io/packagist/l/jturazzi/laravel-database-informix" alt="License"></a>
+</p>
+
 <h3 align="center">Laravel Database Informix est un package conçu pour le framework Laravel afin d'intégrer de manière transparente avec le pilote de base de données Informix. Il étend Illuminate/Database et fonctionne parfaitement avec les dernières versions de Laravel. Testé sur Laravel 10 et 11.</h3>
 
 Ce travail est inspiré par le dépôt : [https://github.com/llaiajiale/laravel-ifx](https://github.com/llaiajiale/laravel-ifx)
