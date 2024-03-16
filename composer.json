@@ -7,7 +7,7 @@
     "prefer-stable": true,
     "autoload": {
         "psr-4": {
-            "Jturazzi\\": "src/jturazzi"
+            "jturazzi\\": "src/jturazzi"
         }
     },
     "authors": [
