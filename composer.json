@@ -17,11 +17,11 @@
         }
     ],
     "require": {
-        "guzzlehttp/guzzle": "*",
-        "illuminate/database": "*",
-        "illuminate/encryption": "*",
-        "illuminate/pagination": "*",
-        "illuminate/support": "*",
+        "guzzlehttp/guzzle": "^7.8",
+        "illuminate/database": "^11.0",
+        "illuminate/encryption": "^11.0",
+        "illuminate/pagination": "^11.0",
+        "illuminate/support": "^11.0",
         "php": "^8.2"
     }
 }
