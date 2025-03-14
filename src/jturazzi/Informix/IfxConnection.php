@@ -172,7 +172,10 @@ class IfxConnection extends Connection
      */
     protected function getDefaultQueryGrammar()
     {
-        return $this->withTablePrefix(new QueryGrammar());
+        $grammar = new QueryGrammar($this);
+        $grammar->setTablePrefix($this->getTablePrefix());
+
+        return $grammar;
     }
 
     /**

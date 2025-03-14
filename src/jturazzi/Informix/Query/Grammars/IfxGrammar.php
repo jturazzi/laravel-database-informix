@@ -7,6 +7,24 @@ use Illuminate\Database\Query\Grammars\Grammar;
 
 class IfxGrammar extends Grammar {
 
+    /**
+     * The table prefix for the grammar.
+     *
+     * @var string
+     */
+    protected $tablePrefix = '';
+
+    /**
+     * Set the table prefix.
+     *
+     * @param  string  $prefix
+     * @return $this
+     */
+    public function setTablePrefix($prefix)
+    {
+        $this->tablePrefix = $prefix;
+        return $this;
+    }
 
     protected function compileLimit(Builder $query, $limit)
     {
