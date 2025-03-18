@@ -10,6 +10,11 @@
 
 This work is inspired by the repository: [https://github.com/llaiajiale/laravel-ifx](https://github.com/llaiajiale/laravel-ifx)
 
+Starting April 2025, I will no longer provide maintenance or updates for this repository, as I am no longer working with Informix and Laravel.
+However, pull requests are still welcome and will be reviewed.
+
+Thank you for your understanding.
+
 ## Prerequisites
 
 Before installing this package, make sure you have the Informix SDK installed on your system. The Informix SDK is required for communication with the Informix database. You can download the SDK from the official IBM website.
