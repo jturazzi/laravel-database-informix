@@ -17,7 +17,7 @@
         }
     ],
     "require": {
-        "guzzlehttp/guzzle": "^7.9",
+        "guzzlehttp/guzzle": "^8.1.0",
         "illuminate/database": "10.*|11.*|12.*|13.*",
         "illuminate/encryption": "10.*|11.*|12.*|13.*",
         "illuminate/pagination": "10.*|11.*|12.*|13.*",
