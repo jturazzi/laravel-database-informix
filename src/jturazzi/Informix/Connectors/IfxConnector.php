@@ -7,6 +7,7 @@ use Illuminate\Database\Connectors\Connector;
 use Illuminate\Database\Connectors\ConnectorInterface;
 use PDO;
 use Illuminate\Support\Arr;
+use Illuminate\Support\Str;
 use Exception;
 
 
@@ -39,7 +40,7 @@ class IfxConnector extends Connector implements ConnectorInterface
         $password = Arr::get($config, 'password');
 
         if($this->encrypter && strlen($password) > 50){
-            if(starts_with("base64:", $password)){
+            if(Str::startsWith($password, "base64:")){
                 $password = $this->encrypter->decrypt(substr($password, 7));
             } else {
                 $password = $this->encrypter->decrypt($password);

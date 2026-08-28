@@ -8,7 +8,6 @@ use jturazzi\Informix\Query\Grammars\IfxGrammar as QueryGrammar;
 use jturazzi\Informix\Query\Processors\IfxProcessor;
 use jturazzi\Informix\Schema\Grammars\IfxGrammar as SchemaGrammar;
 use jturazzi\Informix\Schema\IfxBuilder as SchemaBuilder;
-use Doctrine\DBAL\Driver\PDOInformix\Driver as DoctrineDriver;
 
 class IfxConnection extends Connection
 {
@@ -72,9 +71,9 @@ class IfxConnection extends Connection
         return iconv($in_encoding, "{$out_encoding}//IGNORE", trim($value));
     }
 
-    public function select($query, $bindings = [], $useReadPdo = true)
+    public function select($query, $bindings = [], $useReadPdo = true, array $fetchUsing = [])
     {
-        $results = parent::select($query, $bindings, $useReadPdo);
+        $results = parent::select($query, $bindings, $useReadPdo, $fetchUsing);
         if ($this->isTransEncoding()) {
             if ($results) {
                 $db_encoding = $this->getConfig('db_encoding');
@@ -114,7 +113,7 @@ class IfxConnection extends Connection
                 return $this->getPdo()->prepare($query)->execute($bindings);
             }
 
-            if (count($bindings) % $count > 0) {
+            if ($count === 0 || count($bindings) % $count > 0) {
                 throw new \InvalidArgumentException('the driver can not support multi-insert.');
             }
             $mutiBindings = array_chunk($bindings, $count);
@@ -186,15 +185,5 @@ class IfxConnection extends Connection
     protected function getDefaultSchemaGrammar()
     {
         return $this->withTablePrefix(new SchemaGrammar());
-    }
-
-    /**
-     * Get the Doctrine DBAL driver.
-     *
-     * @return \Doctrine\DBAL\Driver\PDOInformix\Driver
-     */
-    protected function getDoctrineDriver()
-    {
-        return new DoctrineDriver;
     }
 }

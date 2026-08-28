@@ -115,7 +115,7 @@ class IfxGrammar extends Grammar {
 
         $existsQuery->columns = [];
 
-        return $this->compileSelect($existsQuery->selectRaw('1 e'));
+        return $this->compileSelect($existsQuery->selectRaw('1 as "exists"'));
     }
 
     public function compileInsert(Builder $query, array $values)

@@ -4,8 +4,8 @@ namespace jturazzi\Informix\Schema\Grammars;
 
 use Illuminate\Database\Schema\Grammars\Grammar;
 use Illuminate\Support\Fluent;
-use Illuminate\Database\Connection;
 use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Contracts\Database\Query\Expression;
 
 class IfxGrammar extends Grammar
 {
@@ -283,7 +283,7 @@ class IfxGrammar extends Grammar
      *
      * @return array
      */
-    public function compileRenameColumn(Blueprint $blueprint, Fluent $command, Connection $connection)
+    public function compileRenameColumn(Blueprint $blueprint, Fluent $command)
     {
         $table = $this->wrapTable($blueprint);
         $rs = ["rename column {$table}.{$command->from} to {$command->to}"];
